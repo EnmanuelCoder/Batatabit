@@ -1,4 +1,4 @@
-# Batatabit
+
 # Batatabit
 Static page made with HTML and CSS about the next revolution in cryptocurrency exchange Batatabit will help you navigate between the different prices and trends.
 **This project follows the mobile first methodology.**
