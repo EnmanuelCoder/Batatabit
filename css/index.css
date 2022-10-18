@@ -28,6 +28,7 @@
 
 html {
   font-family: var(--tipografia_DM);
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -159,94 +160,141 @@ html {
   color: #757575;
 }
 
-.container-exchange {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
 .exchange-container__table {
   width: 100%;
-  margin-top: 50px;
-  position: relative;
-  overflow: hidden;
-}
-
-.exchange-container__absolute {
-  position: absolute;
-  bottom: 75%;
-  right: 5px;
-}
-
-.container-exchange--arrow {
-  margin-top: 50px;
-  
-}
-
-.exchange-container__table-grid {
-  display: grid;
-  place-content: center;
-  grid-template-columns: 120px 120px;
-  grid-auto-rows: 40px;
-  margin-top: 10px;
-  
-}
-
-.exchange-container__table-title {
-  font-size: 20px;
-  grid-column: 1/3;
-  color: var(--bitcoin-orange);
-  text-align: start;
-}
-
-.exchange-container__table-item {
-  display: grid;
-  align-items: center;
-  background: #fff; 
-  border: 1px rgba(89, 73, 30, 0.16) solid;
-  border-radius: 3px;
-  box-shadow: 0px 4px 8px  rgba(89, 73, 30, 0.16);
-}
-
-.exchange-container__table-data {
   display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
-  font-weight: 500;
-  color: #b5b0ac;
-  font-size: 16px;
-
+  flex-direction: column;
 }
 
-.exchange-container__table-data--price {
-  color: var(--warm-black);
+.exchange-tablesContainer {
+  padding: 3px;
+	margin-top: 40px;
+	width: 90%;
+  justify-self: center;
+	align-self: center;
+	min-width: 110px;
+	max-width: 520px;
+	text-align: left;
 }
 
-.exchange-container__table-update {
-  display: flex;
+.tableContainer {
+	display: flex;
+	flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
 }
 
-.exchange-container__table-update-text {
-  background: var(--soft-orange);
-  padding: 8px;
-  border-radius: 8px;
-
+.tableContainer h3 {
+	font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 2rem;
+	color: #ff9536;
+	margin-left: 12px;
+	margin-bottom: 12px;
 }
 
-.exchange-container__table-update-text-span {
-  font-weight: 700;
+.tableContainer--blue h3 {
+  color: #1a9af7;
 }
 
-.exchange-container__table-title--blue {
-  color: var(--secondary-blue);
+.grid-tableContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-radius: 8px;
+	font-family: 'Inter', sans-serif;
+	grid-gap: 1.5px;
 }
 
-.exchange-container__table-update-text--blue {
-  background: var(--secondary-blue);
+.grid-tableContainer div {
+	padding: 10px 12px;
+	display: flex;
+	background-color: var(--just-white);
 }
+
+.grid-tableContainer div:nth-child(1) {
+	border-top-left-radius: 4px;
+}
+
+.grid-tableContainer div:nth-child(2) {
+	border-top-right-radius: 4px;
+}
+
+.grid-tableContainer div:nth-child(7) {
+	border-bottom-left-radius: 4px;
+}
+
+.grid-tableContainer div:nth-child(8) {
+	border-bottom-right-radius: 4px;
+}
+
+.grid-tableContainer div:nth-child(2n) {
+	justify-content: center;
+}
+
+.grid-tableContainer div h4 {
+	font-size: 1.3rem;
+	font-weight: 500;
+	line-height: 1.9rem;
+	color: #b5b0ac;
+}
+
+.grid-tableContainer div h5 {
+	font-size: 1.4rem;
+	font-weight: 400;
+	line-height: 1.7rem;
+	color: #757575;
+}
+
+.grid-tableContainer div h5 span {
+	display: inline-block;
+	margin-left: 10.5px;
+	width: 12px;
+	height: 8px;
+	background-image: url('../assets/icons/trending-down.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #F5450D;
+}
+
+.grid-tableContainer div:nth-child(4) h5 span {
+	display: inline-block;
+	margin-left: 10.5px;
+	width: 12px;
+	height: 8px;
+	background-image: url('../assets/icons/trending-up.svg') !important;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #F5450D;
+}
+
+.table-updateDate {
+	background-color: var(--soft-orange);
+	color: var(--warm-black);
+	padding: 8px;
+	text-align: center;
+	margin-top: 16px;
+	border-radius: 8px;
+	width: 90%;
+	align-self: center;
+}
+
+.table-updateDate--blue {
+  background: #1a9af7;
+}
+
+.table-updateDate p {
+	font-size: 1.2em;
+	font-weight: 400;
+	line-height: 1.45rem;
+}
+
+.table-updateDate span {
+	font-size: 1.2rem;
+	font-weight: 700;
+	line-height: 1.45rem;
+}
+
 
 /*TODO: Seccion 2*/
 
@@ -371,15 +419,10 @@ html {
 /*TODO: Seccion 4*/
 
 .container-planes {
-  margin-bottom: 50px;
   width: 100%;
   min-width: 320px;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: var(--off-white);
+  padding-bottom: 70px;
+  text-align: center;
 }
 
 .planes-info {
@@ -412,10 +455,12 @@ html {
 
 .planes-card-slide {
   display: flex;
+  gap: 5px;
   height: 400px;
   overflow-x: scroll;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
+  
 }
 
 .planes-card__item {
@@ -428,20 +473,22 @@ html {
   margin: 0 auto;
   margin-bottom: 40px;
   text-align: center;
-  background: var(--just-white);
   box-shadow: 0 4px 8px rgba(0, 0,0 , 0.16);
   border-radius: 15px;
+  background: var(--bitcoin-orange);
+  color: white;
 }
 
-.planes-card__texto-fotante {
+.planes-card__texto-flotante {
   position: absolute;
-  top: 0%;
+  top: 10;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
   background: var(--bitcoin-orange);
   color: var(--just-white);
   border-radius: 15px;
+
 }
 
 .planes-card__info {
@@ -452,13 +499,14 @@ html {
 
 .planes-card__title {
   margin: 50px 0 20px 0;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 }
 
 .planes-card__price {
   font-size: 80px;
   font-weight: bold;
+  color: var(--black);
 }
 
 .planes-card__dollar {
@@ -467,7 +515,7 @@ html {
 }
 
 .planes-card__text {
-  color: #757575;
+  color: #ffff;
   line-height: 18px;
   font-weight: 500;
   font-size: 14px;
@@ -485,6 +533,7 @@ html {
   display:flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .planes-card__button-arrow {
@@ -511,7 +560,7 @@ footer section {
 }
 
 footer .left ul {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.8rem;
   list-style: none;
@@ -523,4 +572,10 @@ footer .left ul {
 .left a {
   text-decoration: none;
   color: var(--just-white);
+}
+
+@media (min-width: 930px) {
+  .planes-card-slide {
+    overflow: hidden;
+  }
 }
